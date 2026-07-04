@@ -70,6 +70,7 @@ export interface VacuumCardConfig {
   show_status: boolean;
   show_toolbar: boolean;
   compact_view: boolean;
+  glass: boolean;
   stats: Record<string, VacuumCardStat[]>;
   actions: Record<string, VacuumCardAction>;
   shortcuts: VacuumCardShortcut[];

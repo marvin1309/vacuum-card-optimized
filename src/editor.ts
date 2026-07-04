@@ -25,6 +25,7 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
   @state() private show_name = true;
   @state() private show_status = true;
   @state() private show_toolbar = true;
+  @state() private glass = false;
 
   setConfig(config: LovelaceCardConfig & VacuumCardConfig): void {
     this.config = config;
@@ -182,6 +183,21 @@ export class VacuumCardEditor extends LitElement implements LovelaceCardEditor {
           >
           </ha-switch>
           ${localize('editor.show_toolbar')}
+        </div>
+
+        <div class="option">
+          <ha-switch
+            aria-label=${localize(
+              this.glass
+                ? 'editor.glass_aria_label_off'
+                : 'editor.glass_aria_label_on',
+            )}
+            .checked=${Boolean(this.glass)}
+            .configValue=${'glass'}
+            @change=${this.valueChanged}
+          >
+          </ha-switch>
+          ${localize('editor.glass')}
         </div>
 
         <strong>${localize('editor.code_only_note')}</strong>
