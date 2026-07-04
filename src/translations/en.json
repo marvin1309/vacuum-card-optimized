@@ -76,6 +76,9 @@
     "show_toolbar": "Show Toolbar",
     "show_toolbar_aria_label_on": "Toggle display toolbar on",
     "show_toolbar_aria_label_off": "Toggle display toolbar off",
+    "glass": "Glass Background",
+    "glass_aria_label_on": "Toggle glass background on",
+    "glass_aria_label_off": "Toggle glass background off",
     "code_only_note": "Note: Setting actions and stats options are available exclusively using Code Editor."
   }
 }

@@ -544,7 +544,7 @@ export class VacuumCard extends LitElement {
 
   private renderUnavailable(): Template {
     return html`
-      <ha-card>
+      <ha-card class=${this.config.glass ? 'glass' : nothing}>
         <div class="preview not-available">
           <div class="metadata">
             <div class="not-available">
@@ -562,7 +562,7 @@ export class VacuumCard extends LitElement {
     }
 
     return html`
-      <ha-card>
+      <ha-card class=${this.config.glass ? 'glass' : nothing}>
         <ha-ripple></ha-ripple>
         <div class="preview">
           <div class="header">

@@ -25,6 +25,24 @@ ha-card {
   overflow: hidden;
 }
 
+/* Glass look (opt-in via `glass: true`) — matches the dashboard's frosted cards.
+   Tunable through CSS vars so a theme / card_mod can override. */
+ha-card.glass {
+  background: var(--vc-glass-background, rgba(255, 255, 255, 0.08));
+  border: none;
+  box-shadow: none;
+  border-radius: var(--vc-glass-radius, 20px);
+  backdrop-filter: blur(var(--vc-glass-blur, 10px));
+  -webkit-backdrop-filter: blur(var(--vc-glass-blur, 10px));
+}
+
+/* Soften the internal dividers so the card reads as one frosted surface. */
+ha-card.glass .stats,
+ha-card.glass .stats-block,
+ha-card.glass .toolbar {
+  border-color: var(--vc-glass-divider-color, rgba(255, 255, 255, 0.12));
+}
+
 .preview {
   position: relative;
   text-align: center;

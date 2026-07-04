@@ -106,21 +106,39 @@ shortcuts:
 
 Here is what every option means:
 
-| Name             |   Type    | Default      | Description                                                                                               |
-| ---------------- | :-------: | ------------ | --------------------------------------------------------------------------------------------------------- |
-| `type`           | `string`  | **Required** | `custom:vacuum-card`                                                                                      |
-| `entity`         | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                  |
-| `battery_entity` | `string`  | Optional     | An entity_id within the `sensor` domain to display battery state and icon.                                |
-| `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                   |
-| `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                 |
-| `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                      |
-| `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                         |
-| `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                |
-| `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                |
-| `compact_view`   | `boolean` | `false`      | Compact view without image.                                                                               |
-| `stats`          | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                            |
-| `actions`        | `object`  | Optional     | Override default actions behavior with service invocations.                                               |
-| `shortcuts`      |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner. |
+| Name             |   Type    | Default      | Description                                                                                                |
+| ---------------- | :-------: | ------------ | ---------------------------------------------------------------------------------------------------------- |
+| `type`           | `string`  | **Required** | `custom:vacuum-card`                                                                                       |
+| `entity`         | `string`  | **Required** | An entity_id within the `vacuum` domain.                                                                   |
+| `battery_entity` | `string`  | Optional     | An entity_id within the `sensor` domain to display battery state and icon.                                 |
+| `map`            | `string`  | Optional     | An entity_id within the `camera` domain, for streaming live vacuum map.                                    |
+| `map_refresh`    | `integer` | `5`          | Update interval for map camera in seconds                                                                  |
+| `image`          | `string`  | `default`    | Path to image of your vacuum cleaner. Better to have `png` or `svg`.                                       |
+| `show_name`      | `boolean` | `true`       | Show friendly name of the vacuum.                                                                          |
+| `show_status`    | `boolean` | `true`       | Show status of the vacuum.                                                                                 |
+| `show_toolbar`   | `boolean` | `true`       | Show toolbar with actions.                                                                                 |
+| `compact_view`   | `boolean` | `false`      | Compact view without image.                                                                                |
+| `glass`          | `boolean` | `false`      | Frosted-glass background (translucent + blur) to match glass dashboards. Tunable via CSS vars (see below). |
+| `stats`          | `object`  | Optional     | Custom per state stats for your vacuum cleaner                                                             |
+| `actions`        | `object`  | Optional     | Override default actions behavior with service invocations.                                                |
+| `shortcuts`      |  `array`  | Optional     | List of shortcuts shown at the right bottom part of the card with custom actions for your vacuum cleaner.  |
+
+### Glass background
+
+Set `glass: true` for a frosted-glass card (translucent background + backdrop blur, no border/shadow) that blends into glass-style dashboards. The look is tunable via CSS variables (override in a theme or with `card-mod`):
+
+| Variable                   | Default                     | Description                   |
+| -------------------------- | --------------------------- | ----------------------------- |
+| `--vc-glass-background`    | `rgba(255, 255, 255, 0.08)` | Frosted surface color/opacity |
+| `--vc-glass-blur`          | `10px`                      | Backdrop blur radius          |
+| `--vc-glass-radius`        | `20px`                      | Card corner radius            |
+| `--vc-glass-divider-color` | `rgba(255, 255, 255, 0.12)` | Stats/toolbar divider color   |
+
+```yaml
+type: custom:vacuum-card
+entity: vacuum.your_vacuum
+glass: true
+```
 
 ### `stats` object
 
